@@ -84,8 +84,8 @@ void draw()
     for (int i=0;i<8;i++){    //shoot image
     shootX[i] -= 4;
     closestEnemyIndex=closestEnemy(shootX[i],shootY[i]);
-    if (closestEnemyIndex!=-1){
-    if (enemyY[closestEnemyIndex]>shootY[i]){shootY[i]++;}else if (enemyY[closestEnemyIndex]<shootY[i]){shootY[i]--;}}
+    if (closestEnemyIndex!=-1){if(shootX[i]>enemyX[closestEnemyIndex]){
+    if (enemyY[closestEnemyIndex]>shootY[i]){shootY[i]++;}else if (enemyY[closestEnemyIndex]<shootY[i]){shootY[i]--;}}}
     
     if (shoot[i]==true){image(shootimage,shootX[i],shootY[i]+8);}if (shootX[i]<-31){shoot[i]=false;}}  
     //boom!!!!!boom!
