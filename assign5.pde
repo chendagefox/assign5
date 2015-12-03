@@ -84,8 +84,8 @@ void draw()
     for (int i=0;i<8;i++){    //shoot image
     shootX[i] -= 4;
     closestEnemyIndex=closestEnemy(shootX[i],shootY[i]);
-    //if (closestEnemyIndex==-1){}else{
-    if (enemyY[closestEnemyIndex]>shootY[i]){shootY[i]++;}else if (enemyY[closestEnemyIndex]<shootY[i]){shootY[i]--;}
+    if (closestEnemyIndex!=-1){
+    if (enemyY[closestEnemyIndex]>shootY[i]){shootY[i]++;}else if (enemyY[closestEnemyIndex]<shootY[i]){shootY[i]--;}}
     
     if (shoot[i]==true){image(shootimage,shootX[i],shootY[i]+8);}if (shootX[i]<-31){shoot[i]=false;}}  
     //boom!!!!!boom!
@@ -223,7 +223,7 @@ int closestEnemy(int Sx,int Sy){
     for(int i=0;i<8;i++){num[i]=dist(enemyX[i],enemyY[i],Sx,Sy);}
     K=num[1];N=1;
     for(int i=0;i<8;i++){if(num[i]<K){K=num[i];N=i;}}
-    //if(num[i]==dist(-1,-1,Sx,Sy)){N=-1;}
+    if(num[0]==dist(-1,-1,Sx,Sy)&&num[1]==dist(-1,-1,Sx,Sy)&&num[2]==dist(-1,-1,Sx,Sy)&&num[3]==dist(-1,-1,Sx,Sy)&&num[4]==dist(-1,-1,Sx,Sy)&&num[5]==dist(-1,-1,Sx,Sy)&&num[6]==dist(-1,-1,Sx,Sy)&&num[7]==dist(-1,-1,Sx,Sy)){N=-1;}
     return N;
   }
 
